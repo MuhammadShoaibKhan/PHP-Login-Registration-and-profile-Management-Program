@@ -109,7 +109,7 @@
               	   Session::set("id" , $result->id);
               	  Session::set("name" , $result->name);
               	  Session::set("username" , $result->username);
-              	   Session::set("loginmsg" , "<div class='alert alert-success'><strong> Success ! </strong> your are loggedIn  </div>");
+              	   Session::set("loginmsg" , "<div class='alert alert-success'><strong> Success ! </strong> You are Logged In  </div>");
               	   header("Location: index.php");
 
               }else {
