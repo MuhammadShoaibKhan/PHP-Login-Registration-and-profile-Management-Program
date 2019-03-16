@@ -36,7 +36,7 @@ Session::init();
 
     <?php
       $id = Session::get("id");
-      $userlogin = Session:get("login");
+      $userlogin = Session::get("login");
 
     if($userlogin == true){
 
@@ -49,7 +49,7 @@ Session::init();
       <li><a href="profile.php">Profile</a></li>
       <li><a href="?action=logout">Logout</a></li>
     <?php     }  else{  ?>
-    ?>
+    
       <li><a href="login.php">Login</a></li>
       <li><a href="Register.php">Register</a></li>
    
