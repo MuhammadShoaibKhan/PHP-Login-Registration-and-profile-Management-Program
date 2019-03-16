@@ -1,7 +1,7 @@
 <?php include 'inc/header.php'; 
       include 'lib/User.php';
       Session::checkSession();
-      $user = new User();
+     
 ?>
 
 <?php
@@ -42,31 +42,38 @@
 <th width="20%">Email</th>
 <th width="20%">Action</th>
 
+<?php
+
+$user = new User();
+$userdata = $user->getUserData();
+if($userdata){
+  $i = 0;
+
+
+foreach ($userdata as $sdata){
+      $i++;
+
+?>
+
+
 <tr>
-<td>01</td>
-<td>John Smith</td>
-<td>jsmith</td>
-<td>jsmith@gmail.com</td>
+<td><?php echo $i ?></td>
+<td><?php echo $sdata['name'] ?></td>
+<td><?php echo $sdata['username'] ?></td>
+<td><?php echo $sdata['email'] ?></td>
 <td><a class="btn btn-primary" href="profile.php?id">View</a></td>
 </tr>
 
-<tr>
-<td>02</td>
-<td>Albert Michael</td>
-<td>amichael</td>
-<td>amichael@gmail.com</td>
-<td><a class="btn btn-primary" href="profile.php?id">View</a></td>
-</tr>
+<?php
+}
+}  else{  ?>
 
 <tr>
-<td>03</td>
-<td>Bill Spencer</td>
-<td>bspencer</td>
-<td>bspencer@gmail.com</td>
-<td><a class="btn btn-primary" href="profile.php?id">View</a></td>
+<td><h2> No User Data Found  </h2></td>
+
 </tr>
 
-
+<?php  }    ?>
 
 </table>
 </div>
