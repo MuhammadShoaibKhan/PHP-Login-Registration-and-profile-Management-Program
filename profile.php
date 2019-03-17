@@ -1,8 +1,21 @@
-<?php
-include 'inc/header.php';
-
+<?php include 'inc/header.php'; 
+      include 'lib/User.php';
+      Session::checkSession();
+     
 ?>
 
+
+<?php
+
+if(isset($_GET['id']))
+{
+$userId = (int)$_GET['id'];
+}
+
+
+$user = new User();
+
+?>
 
 
 
@@ -15,6 +28,17 @@ include 'inc/header.php';
 <div class="panel-body">
 
 <div style="max-width: 600px; margin:0 auto">
+
+<?php
+
+$userdata = $user -> getUserById($userId);
+if($userdata){
+
+
+
+?>
+
+
 
 
 <form action=" " method="POST">
@@ -51,6 +75,10 @@ include 'inc/header.php';
 
 
 </form>
+
+<?php    }   ?>
+
+
 
 </div>
 </div>
