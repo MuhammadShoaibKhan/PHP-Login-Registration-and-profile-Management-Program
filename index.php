@@ -61,7 +61,7 @@ foreach ($userdata as $sdata){
 <td><?php echo $sdata['name'] ?></td>
 <td><?php echo $sdata['username'] ?></td>
 <td><?php echo $sdata['email'] ?></td>
-<td><a class="btn btn-primary" href="profile.php?id<?php echo $sdata['id'] ?>" >View</a></td>
+<td><a class="btn btn-primary" href="profile.php?id=<?php echo $sdata['id'] ?>" >View</a></td>
 </tr>
 
 <?php
